@@ -7,12 +7,12 @@
 	onMount(() => {
 		setTimeout(() => {
 			mounted = true;
-		}, 100);
+		}, 200);
 	});
 </script>
 
-{#if mounted}
-	<div class="relative">
-		<div class="transform translate-y-0 animate-none" in:fly={{ y: 150, duration: 1000 }}>Text</div>
-	</div>
-{/if}
+<div class="relative">
+	{#if mounted}
+		<div in:fly={{ y: 150, duration: 1000 }}>Text</div>
+	{/if}
+</div>
