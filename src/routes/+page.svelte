@@ -5,14 +5,16 @@
 	let mounted = false;
 
 	onMount(() => {
-		setTimeout(() => {
-			mounted = true;
-		}, 200);
+		mounted = true;
 	});
 </script>
 
-<div class="relative">
-	{#if mounted}
-		<div in:fly={{ y: 150, duration: 1000 }}>Text</div>
-	{/if}
-</div>
+{#if mounted}
+	<div in:fly={{ y: 500, duration: 1000 }}>Text</div>
+{/if}
+
+<style>
+	div {
+		font-size: 4rem;
+	}
+</style>
