@@ -1,15 +1,18 @@
-<script>
+<script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { circOut } from 'svelte/easing';
 
 	let mounted = false;
 
 	onMount(() => {
-		mounted = true;
+		setTimeout(() => {
+			mounted = true;
+		}, 100);
 	});
 </script>
 
 {#if mounted}
-	<div in:fly={{ y: 150, duration: 1100, easing: circOut }}>Text</div>
+	<div class="relative">
+		<div class="transform translate-y-0 animate-none" in:fly={{ y: 150, duration: 1000 }}>Text</div>
+	</div>
 {/if}
